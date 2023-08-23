@@ -255,15 +255,24 @@ banner
     text-align: left;
     width: 350px;
   }
+
   .banner-title {
+    font-size: 64px;
+    line-height: 71px; /* 110.938% */
+    letter-spacing: 17.321px;
     margin-bottom: 32px;
+  }
+  .banner-title span {
+    font-size: 64px;
+    line-height: 64px; /* 100% */
+    letter-spacing: 17.321px;
   }
   .banner-text {
     font-size: 16px;
     line-height: 28px; /* 175% */
-
     margin-bottom: 40px;
   }
+
   .banner-form {
     position: relative;
     height: 56px;
