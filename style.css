@@ -105,8 +105,10 @@ banner
   line-height: 42px; /* 105% */
   letter-spacing: 10.825px;
   margin-bottom: 16px;
+  text-transform: uppercase;
 }
 .banner-title span {
+  text-transform: uppercase;
   color: var(--desaturated-red);
   font-size: 40px;
   font-weight: 300;
