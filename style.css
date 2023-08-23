@@ -138,6 +138,7 @@ banner
   border: 1px solid hsla(0, 36%, 70%, 0.5);
   outline: none;
   padding: 11px calc(64px + 24px) 9px 24px;
+  background:transparent;
 
   color: var(--dark-grayish-red);
   font-family: var(--FF);
