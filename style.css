@@ -324,6 +324,9 @@ banner
   .error-icon {
     right: calc(100px + 16px);
   }
+  .error-text {
+    transform: translate(32px, 100%);
+  }
 }
 
 @media screen and (min-width: 1440px) {
