@@ -50,22 +50,343 @@ a {
 }
 /*  global classes */
 main {
-  background-color: lightgray;
-  display: grid;
-  place-items: center;
   min-height: 100vh;
+  background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
 }
 .center {
   max-width: 1110px;
-  max-height: 572px;
+  margin: 0 auto;
+  min-height: inherit;
+
+  display: grid;
+  grid-template-rows: auto auto 1fr;
 }
-.hero-img-container {
-  height: 500px;
+
+/* 
+=============
+logo container
+=============
+*/
+.logo-container {
+  padding: 32px;
 }
+.logo {
+  width: 100px;
+  height: auto;
+}
+/* 
+=============
+hero image
+=============
+*/
 .hero-img {
-  display: block;
-  object-fit: cover;
-  object-position: top;
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 
+=============
+banner
+=============
+*/
+.banner-section {
+  padding: 64px 32px;
+  margin-bottom: 28px;
+}
+.banner {
+  text-align: center;
+}
+.banner-title {
+  color: var(--dark-grayish-red);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 42px; /* 105% */
+  letter-spacing: 10.825px;
+  margin-bottom: 16px;
+}
+.banner-title span {
+  color: var(--desaturated-red);
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 42px; /* 105% */
+  letter-spacing: 10.825px;
+}
+.banner-text {
+  color: var(--desaturated-red);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px; /* 157.143% */
+
+  margin-bottom: 32px;
+}
+.banner-form {
+  position: relative;
+  height: 48px;
+}
+.banner-form input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  border-radius: 28px;
+  border: 1px solid hsla(0, 36%, 70%, 0.5);
+  outline: none;
+  padding: 11px calc(64px + 24px) 9px 24px;
+
+  color: var(--dark-grayish-red);
+  font-family: var(--FF);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 28px; /* 200% */
+}
+.show-error.banner-form input {
+  border: 2px solid #f96464;
+  padding-right: calc(64px + 8px + 24px + 24px);
+}
+.banner-form input::placeholder {
+  color: #ce9898;
+  font-size: 14px;
+  font-weight: 400;
+}
+.banner-form button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 64px;
+  height: 100%;
+  border: transparent;
+
+  border-radius: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+}
+.error-text {
+  position: absolute;
+  bottom: -8px;
+  transform: translate(24px, 100%);
+  color: #f96464;
+  font-family: Josefin Sans;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 215.385% */
+  display: none;
+}
+.show-error .error-text {
+  display: block;
+}
+.error-icon {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: calc(64px + 8px);
+  transform: translateY(-50%);
+}
+.show-error .error-icon {
+  display: block;
+}
+
+@media screen and (min-width: 768px) {
+  /*  global classes */
+  main {
+    background: none;
+  }
+  .center {
+    padding: 0 64px;
+    display: block;
+  }
+  .center::before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 57.64vw;
+
+    background: url(./images/bg-pattern-desktop.svg) no-repeat center / 100%
+        100%,
+      linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+  }
+  /* 
+  =============
+  logo container
+  =============
+  */
+  .logo-container {
+    padding: 64px 0;
+    margin-bottom: 73px;
+  }
+  .logo {
+    width: 158px;
+    height: auto;
+  }
+  /* 
+  =============
+  hero image
+  =============
+  */
+  .hero-img-container {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 42.36vw;
+  }
+  /* 
+  =============
+  banner
+  =============
+  */
+  .banner-section {
+    padding: 0;
+    margin: 0;
+  }
+  .banner {
+    text-align: left;
+    width: 350px;
+  }
+  .banner-title {
+    margin-bottom: 32px;
+  }
+  .banner-text {
+    font-size: 16px;
+    line-height: 28px; /* 175% */
+
+    margin-bottom: 40px;
+  }
+  .banner-form {
+    position: relative;
+    height: 56px;
+  }
+  .banner-form input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    border-radius: 28px;
+    border: 1px solid hsla(0, 36%, 70%, 0.5);
+    outline: none;
+    padding: 15px calc(100px + 32px) 13px 32px;
+
+    font-size: 16px;
+    line-height: 28px; /* 175% */
+  }
+  .show-error .banner-form input {
+    padding-right: calc(100px + 16px + 24px + 24px);
+    border: 2px solid #f96464;
+  }
+  .banner-form input::placeholder {
+    font-size: 16px;
+    line-height: 28px; /* 175% */
+  }
+  .banner-form button {
+    width: 100px;
+  }
+  .banner-form button:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    transition: var(--transition);
+    z-index: -1;
+    opacity: 0;
+  }
+  .banner-form button:hover:before {
+    z-index: 1;
+    opacity: 1;
+  }
+  .error-icon {
+    right: calc(100px + 16px);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  /*  global classes */
+  main {
+    background: none;
+  }
+  .center {
+    display: block;
+    padding: 0;
+  }
+  .center::before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 57.64vw;
+
+    background: url(./images/bg-pattern-desktop.svg) no-repeat center / 100%
+        100%,
+      linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+  }
+  /* 
+  =============
+  logo container
+  =============
+  */
+  .logo-container {
+    padding: 64px 0;
+    margin-bottom: 73px;
+  }
+  .logo {
+    width: 158px;
+    height: auto;
+  }
+  /* 
+  =============
+  hero image
+  =============
+  */
+  .hero-img-container {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 42.36vw;
+  }
+  /* 
+  =============
+  banner
+  =============
+  */
+  .banner-section {
+    padding: 0;
+    margin: 0;
+  }
+  .banner {
+    text-align: left;
+    width: 445px;
+  }
+  .banner-title {
+    font-size: 64px;
+    line-height: 71px; /* 110.938% */
+    letter-spacing: 17.321px;
+  }
+  .banner-title span {
+    font-size: 64px;
+    line-height: 64px; /* 100% */
+    letter-spacing: 17.321px;
+  }
+  .banner-text {
+    font-size: 16px;
+    line-height: 28px; /* 175% */
+  }
 }
